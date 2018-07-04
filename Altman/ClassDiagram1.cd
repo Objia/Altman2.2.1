@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Altman.Data.AccessHelper" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAIQAAAAAAAAAAABAAAABAAAQAAAABBAAAAEAAgAAA=</HashCode>
+      <FileName>Data\AccessHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Data.Db" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAIJAAAAAAAIAMAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Db.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Data.SqliteHelper" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAEAAAAAAADCABAAEgUAAAAFAAAABIQAAAAAQAAA=</HashCode>
+      <FileName>Data\SqliteHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.AboutBox" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kIAAAAgAACAACAUAAACAAAADAAAAEIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\AboutBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.ControlPolicySetting" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAAiAIAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Forms\ControlPolicySetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.ControlProxySetting" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAyAABCgQBJAAADGAAAgCCQAQAEAIAAAAAQAIAAA=</HashCode>
+      <FileName>Forms\ControlProxySetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.ControlRequestHeaderSetting" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAABAAACAAAAAAAAGAAAAKExAAAEEAQCAAAAARAAA=</HashCode>
+      <FileName>Forms\ControlRequestHeaderSetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.ControlUserAgentSetting" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAABgAAACAAAACAAAAAAAAAQAAAgAAAAA=</HashCode>
+      <FileName>Forms\ControlUserAgentSetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.FormCustomShellTypeWizard" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cATAcAAKICoQQBoEmWDAGAgCAwAAoXECECCBEQBhEjA=</HashCode>
+      <FileName>Forms\FormCustomShellTypeWizard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.FormGlobalSetting" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiAACAIACAAQAAABAiQgABWAAAAEAACAAHBAAATBAA=</HashCode>
+      <FileName>Forms\FormGlobalSetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.FormListening" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAQECAAAFAAAASAAAACAAQAAAAAAAAAACAAAQA=</HashCode>
+      <FileName>Forms\FormListening.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.FormMain" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwIKSQgAOCEiABAAAAaIQKACCAIFAQgAkAFIBAJAFCE=</HashCode>
+      <FileName>Forms\FormMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Forms.Welcome" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCAAIAAAgACAAAACAAAEAAEAAAAQAAACAAA=</HashCode>
+      <FileName>Forms\Welcome.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.InitUi" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAACAAAAAAAABAAAAAAEAAAACAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>InitUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.PluginsImport" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>PluginsImport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Program" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.TabCore" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAIEAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>TabCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.CustomCommandCode" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAABAAAAAAABAAAAAAIACAAAAAAgAQAICAAAA=</HashCode>
+      <FileName>Logic\CustomCommandCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.CustomShellType" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAABAAAAAAAAAAAAhAAAACIEEAAAAAAABAAAgAAQ=</HashCode>
+      <FileName>Logic\CustomShellType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.CustomShellTypeProvider" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgEAAABIAAA=</HashCode>
+      <FileName>Logic\CustomShellTypeProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.CustomShellTypeXmlHandle" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAEAAAAAAAAAAAACAAECAAAAACAAAAAAgAAAAAA=</HashCode>
+      <FileName>Logic\CustomShellTypeXmlHandle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.FuncTreeNode" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgIBAAAAAAAAAAAJAAQAQQAAAAAAAAQAAgIEEIAAA=</HashCode>
+      <FileName>Logic\FuncTreeNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.InitWorker" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAAAAAAAAAAAQAAAAAAACAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Logic\InitWorker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.SettingXmlHandle" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEABAAAAAAAAAAAAAAAAACAAAAAAgAAAAAhAAAAAA=</HashCode>
+      <FileName>Logic\SettingXmlHandle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.ShellExtra" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAgAAAAAAAAgBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\ShellExtra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.ShellExtraHandle" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAEIAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Logic\ShellExtraHandle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Logic.XmlHelper" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\XmlHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Service.App" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAiAAAAAEAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Service\App.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Altman.Service.Core" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAEAAAAAAAAABAAAAAAEIAAAAAAAAAAwAgAAAAAAA=</HashCode>
+      <FileName>Service\Core.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Altman.Service.Db" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAABAAAAAAAIAMAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\Db.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Altman.Service.Host" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAABAgAAAAAEAAAAQAAACAAAAgQAA=</HashCode>
+      <FileName>Service\Host.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Altman.Service.Ui" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAEAAAAAAAAAAABAAAAEAAQAAAAAAAAA=</HashCode>
+      <FileName>Service\Ui.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Altman.Setting.GlobalSetting" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAACAAQAAAADgQAAAAAAAAAABAAAAAAAABAAAA=</HashCode>
+      <FileName>Setting\GlobalSetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Setting.Setting" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAQCAAQAAAQCgAACCAEAgAIAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Setting\Setting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Web.Http" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgAQgAAAEEDABgAgBEoAANKBANwAAAAEAIEAAAkAA=</HashCode>
+      <FileName>Web\Http.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Web.HttpClient" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABQIAAAABEAAAAIAACAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Web\HttpClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Altman.Web.ProxyServer" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAhEQCACAEABYAAQAAyIKAAAQoEgYIIEUgAAAAA=</HashCode>
+      <FileName>Web\ProxyServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Altman.ILoadOrSaveSetting" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoadOrSaveSetting.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Altman.Logic.EncryMode" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAABAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Logic\EncryMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
