@@ -89,7 +89,7 @@ namespace Altman
             return CustomShellTypeProvider.ShellTypeStyleContainer.Keys.ToArray();
         }
         /// <summary>
-        /// 获取CustomShellType子节点的名字列表
+        /// 获取CustomShellType节点DbManager的子节点名字列表
         /// </summary>
         /// <param name="shellTypeName"></param>
         /// <returns></returns>
@@ -110,7 +110,11 @@ namespace Altman
             }
             return funcCodeNameList.ToArray();
         }
-
+        /// <summary>
+        /// 获取指定ShellType的serviceExample一句话木马语句
+        /// </summary>
+        /// <param name="shellTypeName"></param>
+        /// <returns></returns>
         public static string GetCustomShellTypeServerCode(string shellTypeName)
         {
             if (CustomShellTypeProvider.ShellTypeStyleContainer.ContainsKey(shellTypeName))
@@ -122,7 +126,7 @@ namespace Altman
         }
 
         /// <summary>
-        /// 显示树节点
+        /// 将节点添加到目录树中
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -142,6 +146,10 @@ namespace Altman
             }
             return tree;
         }
+        /// <summary>
+        /// 绘制CustomShellType目录树
+        /// </summary>
+        /// <returns></returns>
         public static TreeNode GetCustomShellTypeTree()
         {
             TreeNode tree = new TreeNode();
