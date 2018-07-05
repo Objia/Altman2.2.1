@@ -57,7 +57,30 @@ namespace Altman
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /*********************************************
+         * 关于自定义CustomShellType文件的分析
+         * CustomShellType文件主要用于自定义服务器端的一句话木马、相应的服务器端执行的Web语句、相应的数据库连接和操作语句。
+         * 分为三类文件：.tree文件、.type文件、.func文件
+         * 
+         * .tree文件：_func.tree
+         * 文件指定ShellType的目录结构
+         * 例如：          phpeval         
+         *         ___________|_________________  
+         *        |           |                 |
+         *      Cmder       FileManager     DBManager
+         *     _________________________________|________________________________________________________
+         *    |       |           |             |                |                |           |          |
+         * access   mssql   access_oledb    mssql_oledb     mysql_oledb     oracle_oledb    mysql   mssql_sqlsrv
+         * 
+         * 
+         * .func文件：phpEval_BuiltIn.func、phpEval_DB.func
+         * phpEval_BuiltIn.func文件指定Cmder和FileManager目录下的末节点，包含执行命令行和文件操作的相关语句
+         * phpEval_DB.func文件指定access、mssql、access_oledb、mssql_oledb、mysql_oledb、oracle_oledb、mysql、mssql_sqlsrv目录下的末节点，包含执行数据库操作的相关语句
+         * 
+         * 
+         * .type文件：phpEval.type
+         * 文件指定服务器端的一句话木马类型 
+         * ********************************************/
         /// <summary>
         /// 获取CustomShellType名字列表
         /// </summary>
