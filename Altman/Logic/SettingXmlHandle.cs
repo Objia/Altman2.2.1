@@ -6,8 +6,17 @@ using Altman.Common.AltData;
 
 namespace Altman.Logic
 {
+    /// <summary>
+    /// setting.xml文件的相关操作
+    /// </summary>
     internal class SettingXmlHandle
     {
+        /// <summary>
+        /// 将设置信息写入setting.xml文件
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="basePathDir"></param>
+        /// <param name="setting"></param>
         public static void WriteXml(string fileName, string basePathDir, Setting.Setting setting)
         {
             XmlTextWriter xmlWriter = null;
@@ -136,7 +145,7 @@ namespace Altman.Logic
 
 
         /// <summary>
-        /// 读xml文件
+        /// 读setting.xml文件
         /// </summary>
         public static Setting.Setting ReadXml(string fileName, string basePathDir)
         {
@@ -181,6 +190,11 @@ namespace Altman.Logic
         }
 
 
+        /// <summary>
+        /// 读取UserAgent结点下内容
+        /// </summary>
+        /// <param name="child"></param>
+        /// <returns></returns>
         private static Setting.Setting.UserAgentStruct ReadUserAgentNode(XmlNode child)
         {
             //初始化一下userAgent
@@ -214,6 +228,11 @@ namespace Altman.Logic
             }
             return userAgent;
         }
+        /// <summary>
+        /// 读取HttpHeader结点下内容
+        /// </summary>
+        /// <param name="child"></param>
+        /// <returns></returns>
         private static Setting.Setting.HttpHeaderStruct ReadHttpHeaderNode(XmlNode child)
         {
             Setting.Setting.HttpHeaderStruct httpHeader = new Setting.Setting.HttpHeaderStruct();
@@ -235,6 +254,11 @@ namespace Altman.Logic
             }
             return httpHeader;
         }
+        /// <summary>
+        /// 读取Policy结点下内容
+        /// </summary>
+        /// <param name="child"></param>
+        /// <returns></returns>
         private static Setting.Setting.PolicyStruct ReadPolicyNode(XmlNode child)
         {
             Setting.Setting.PolicyStruct policy = new Setting.Setting.PolicyStruct();
@@ -251,6 +275,11 @@ namespace Altman.Logic
             }
             return policy;
         }
+        /// <summary>
+        /// 读取Proxy结点下内容
+        /// </summary>
+        /// <param name="child"></param>
+        /// <returns></returns>
         private static Setting.Setting.ProxyStruct ReadProxyNode(XmlNode child)
         {
             Setting.Setting.ProxyStruct proxy = new Setting.Setting.ProxyStruct();

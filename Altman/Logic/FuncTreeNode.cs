@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Altman.Logic
 {
+    /// <summary>
+    /// ShellType目录结点类
+    /// </summary>
     internal class FuncTreeNode
     {
         private string _name;

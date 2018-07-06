@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Altman.Logic
 {
+    /// <summary>
+    /// ShellType存储容器
+    /// </summary>
     internal static class CustomShellTypeProvider
     {
         /// <summary>

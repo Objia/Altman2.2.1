@@ -5,7 +5,7 @@ using Altman.Setting;
 namespace Altman.Logic
 {
     /// <summary>
-    /// 初始化工厂类，包含各类数据的初始化操作
+    /// 初始化工厂类，包含各类数据的初始化操作。
     /// </summary>
     internal class InitWorker//internal表示仅限于本程序集项目访问
     {

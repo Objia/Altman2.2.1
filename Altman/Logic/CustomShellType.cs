@@ -6,6 +6,9 @@ namespace Altman.Logic
     internal class CustomShellType
     {
         #region class
+        /// <summary>
+        /// 表示.tree文件中<mainCodeParam>和<funcCodeParam>标签，以及.func文件中<funcParam>标签的类
+        /// </summary>
         public struct ParamStruct
         {
             public string Name;
@@ -18,12 +21,18 @@ namespace Altman.Logic
                 EncryMode = encryMode;
             }
         }
+        /// <summary>
+        /// 表示.type文件中<basicSetting>标签的类
+        /// </summary>
         public class Basic
         {
             public string ShellTypeName;
             public string ServiceExample;
             public ParamStruct MainCodeParam;
 
+            /// <summary>
+            /// 该构造函数什么都不做，对象的字段没有初始化
+            /// </summary>
             public Basic()
             {
             }
@@ -35,6 +44,9 @@ namespace Altman.Logic
                 this.MainCodeParam = mainCodeParam;
             }
         }
+        /// <summary>
+        /// 表示.type文件中<mainCodeSetting>标签的类
+        /// </summary>
         public class MainCode
         {
             public string Item;
@@ -50,6 +62,9 @@ namespace Altman.Logic
                 this.FuncCodeParam = funcCodeParam;
             }
         }
+        /// <summary>
+        /// ShellType目录树末结点类(表示.func文件中<func>标签的类)
+        /// </summary>
         public class FuncCode
         {
             public string Name;
@@ -71,6 +86,9 @@ namespace Altman.Logic
                 this.FuncParams = funcParams;
             }
         }
+        /// <summary>
+        /// ShellType目录树分枝结点类(表示.tree文件中<node>标签的类)
+        /// </summary>
         public class TreeInfo
         {
             public string Path;
@@ -86,6 +104,9 @@ namespace Altman.Logic
 
         #region 字段
         private string _shellTypeName;
+        /// <summary>
+        /// ShellType的名字
+        /// </summary>
         public string ShellTypeName
         {
             get { return _shellTypeName; }
@@ -124,6 +145,11 @@ namespace Altman.Logic
         }
         #endregion
 
+        /// <summary>
+        /// 添加新的ShellType目录结点（如phpeval）
+        /// </summary>
+        /// <param name="nodeXpath"></param>
+        /// <returns></returns>
         public FuncTreeNode AddFuncTreeNode(string nodeXpath)
         {
             FuncTreeNode tmp = _funcTreeRoot.FindNodes(nodeXpath);
@@ -134,7 +160,11 @@ namespace Altman.Logic
             }
             return tmp;
         }
-
+        /// <summary>
+        /// 在ShellType类型下添加操作末结点（如WwwRootPathCode）
+        /// </summary>
+        /// <param name="nodeXpath">指定要在哪个ShellType目录下添加末结点</param>
+        /// <param name="funcCode">要添加的操作末结点</param>
         public void AddFuncCode(string nodeXpath, FuncCode funcCode)
         {
             FuncTreeNode tmp = _funcTreeRoot.FindNodes(nodeXpath);
@@ -143,7 +173,7 @@ namespace Altman.Logic
             {
                 throw new Exception(string.Format("FuncTreeNode:[{0}/{1}] has't been defined", _shellTypeName, nodeXpath));
             }
-            //如果funcCode已经注册
+            //如果操作末结点funcCode已经注册
             if (tmp.Funcs.ContainsKey(funcCode.Name))
             {
                 throw new Exception(string.Format("FuncCode:[{0}/{1}/{2}] has been registered", _shellTypeName, nodeXpath, funcCode.Name));
@@ -153,7 +183,12 @@ namespace Altman.Logic
                 tmp.Funcs.Add(funcCode.Name, funcCode);
             }
         }
-
+        /// <summary>
+        /// 获取指定目录下的末结点
+        /// </summary>
+        /// <param name="nodeXpath">指定的目录</param>
+        /// <param name="funcCodeName">指定的结点名称</param>
+        /// <returns></returns>
         public FuncCode GetFuncCode(string nodeXpath, string funcCodeName)
         {
             FuncTreeNode tmp = _funcTreeRoot.FindNodes(nodeXpath);

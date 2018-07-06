@@ -6,7 +6,7 @@ namespace Altman.Logic
     internal class XmlHelper
     {
         /// <summary>
-        /// 载入xml文件列表
+        /// 载入指定目录中所有的xml文件列表
         /// </summary>
         public static List<string> LoadXMlList(string basePathDir, string extension)
         {

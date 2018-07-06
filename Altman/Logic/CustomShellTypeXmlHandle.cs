@@ -5,6 +5,9 @@ using System.Xml;
 
 namespace Altman.Logic
 {
+    /// <summary>
+    /// 自定义ShellType文件（.tree、.func、.type）的相关操作
+    /// </summary>
     internal class CustomShellTypeXmlHandle
     {
         /// <summary>
