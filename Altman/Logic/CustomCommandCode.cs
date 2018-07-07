@@ -37,6 +37,12 @@ namespace Altman.Logic
                 dic.Add(key, value);
             }
         }
+        /// <summary>
+        /// 使用指定编码方式编码指定字符串
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <param name="item"></param>
+        /// <returns></returns>
         private string EncryItem(EncryMode mode, string item)
         {
             if (mode == EncryMode.None)
@@ -57,7 +63,11 @@ namespace Altman.Logic
             }
         }
 
-
+        /// <summary>
+        /// 获取指定长度的随机字符串
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns></returns>
         private string GetRandomStr(int length)
         {
             Random r = new Random();
@@ -127,6 +137,7 @@ namespace Altman.Logic
             string mainCodeString =
                 FillParams(customShellType.MainCodeSetting.Item, customShellType.MainCodeSetting.FuncCodeParam);
 
+                //NameValueCollection与Dictionary<string,string>比较相似，区别在于NameValueCollection在处理Add时，如果遇到已有的Key会以追加的形式进行修改（以逗号为分隔符）。
             NameValueCollection mainCodeItem = new NameValueCollection
             {
                 {pass, EncryItem(customShellType.BasicSetting.MainCodeParam.EncryMode, mainCodeString)}

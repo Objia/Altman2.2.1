@@ -115,7 +115,10 @@ namespace Altman.Common.AltData
                 throw;
             }
         }
-        
+        /// <summary>
+        /// 将Web访问的参数和值拼接起来（例如a=aaa&b=ddss&temp=dfaadc等），并转换成字节串
+        /// </summary>
+        /// <returns></returns>
         public byte[] Combine()
         {
             string value = string.Empty;
@@ -132,7 +135,11 @@ namespace Altman.Common.AltData
             }
             return Encoding.Default.GetBytes(stringBuilder.ToString());
         }
-
+        /// <summary>
+        /// 将Web访问的参数和值拼接起来（例如a=aaa&b=ddss&temp=dfaadc等），并转换成字符串
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
         public string CombineToStr(NameValueCollection items)
         {
             string value = string.Empty;
@@ -150,6 +157,11 @@ namespace Altman.Common.AltData
             return stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// 将指定的Web访问参数和值的列表拼接起来（例如a=aaa&b=ddss&temp=dfaadc等），并转换成字节串
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public byte[] Combine(NameValueCollection item)
         {
             string value = string.Empty;
