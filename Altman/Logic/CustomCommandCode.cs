@@ -98,7 +98,7 @@ namespace Altman.Logic
                 {
                     //string newguid = Guid.NewGuid().ToString().Substring(0, 2);
                     string newguid = GetRandomStr(1);
-                    //新的uid不能等于pass且，不与已经产生的uid相同
+                    //新的web发包参数id不能等于pass且，不与已经产生的id相同
                     while (newguid == _pass || _randomParam.ContainsValue(newguid))
                     {
                         newguid = GetRandomStr(1);

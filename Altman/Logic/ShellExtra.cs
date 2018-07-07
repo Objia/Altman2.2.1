@@ -21,6 +21,9 @@ namespace Altman.Logic
             get { return ShellExtraHandle.GetSqlConnectionXml(_shellExtraString); }
         }
 
+        /// <summary>
+        /// 实质上就是null
+        /// </summary>
         public WebHeaderCollection HttpHeader
         {
             get

@@ -6,6 +6,11 @@ namespace Altman.Logic
 {
     internal class ShellExtraHandle
     {
+        /// <summary>
+        /// 创建一个xmlNode
+        /// </summary>
+        /// <param name="shellExtraString">节点的innerText值</param>
+        /// <returns></returns>
         private static XmlNode GetShellExtraXml(string shellExtraString)
         {
             if (string.IsNullOrEmpty(shellExtraString)) return null;
@@ -21,14 +26,22 @@ namespace Altman.Logic
             }
             return node;
         }
-
+        /// <summary>
+        /// 根据GetShellExtraXml()函数的内容，实质上就是返回null
+        /// </summary>
+        /// <param name="shellExtraString"></param>
+        /// <returns></returns>
         public static XmlNode GetHttpHeaderXml(string shellExtraString)
         {
             XmlNode root = GetShellExtraXml(shellExtraString);
             if (root == null) return null;
             return root.SelectSingleNode("/httpHeader") ?? null;
         }
-
+        /// <summary>
+        /// 根据GetShellExtraXml()函数的内容，实质上就是返回null
+        /// </summary>
+        /// <param name="shellExtraString"></param>
+        /// <returns></returns>
         public static XmlNode GetSqlConnectionXml(string shellExtraString)
         {
             XmlNode root = GetShellExtraXml(shellExtraString);
@@ -36,6 +49,11 @@ namespace Altman.Logic
             return root.SelectSingleNode("/sqlConnection") ?? null;
         }
 
+        /// <summary>
+        /// 根据GetShellExtraXml()函数的内容，实质上就是返回null
+        /// </summary>
+        /// <param name="shellExtraString"></param>
+        /// <returns></returns>
         public static Dictionary<string, string> GetHttpHeaderList(string shellExtraString)
         {
             XmlNode node = GetHttpHeaderXml(shellExtraString);
