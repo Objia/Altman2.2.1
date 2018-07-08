@@ -116,9 +116,9 @@ namespace Altman.Common.AltData
             }
         }
         /// <summary>
-        /// 将Web访问的参数和值拼接起来（例如a=aaa&b=ddss&temp=dfaadc等），并转换成字节串
+        /// 将Web访问的参数和值拼接起来（例如pass=aaa&amp;funcode=eval(base64_decode($_POST[$funcCode$]));&amp;connstr=@mysql_connect($host,$user,$pwd);等），并转换成字节串
         /// </summary>
-        /// <returns></returns>
+        /// <returns>返回编码拼接后的字节串</returns>
         public byte[] Combine()
         {
             string value = string.Empty;
@@ -136,10 +136,10 @@ namespace Altman.Common.AltData
             return Encoding.Default.GetBytes(stringBuilder.ToString());
         }
         /// <summary>
-        /// 将Web访问的参数和值拼接起来（例如a=aaa&b=ddss&temp=dfaadc等），并转换成字符串
+        /// 将Web访问的参数和值拼接起来（例如pass=aaa&amp;funcode=eval(base64_decode($_POST[$funcCode$]));&amp;connstr=@mysql_connect($host,$user,$pwd);等），并转换成字符串
         /// </summary>
-        /// <param name="items"></param>
-        /// <returns></returns>
+        /// <param name="items">需要拼接的参数和值的集合（例如{{"pass","aaa"},{"funcode","eval(base64_decode($_POST[$funcCode$]));"},{"connstr","@mysql_connect($host,$user,$pwd);"}}）</param>
+        /// <returns>返回编码拼接后的字符串</returns>
         public string CombineToStr(NameValueCollection items)
         {
             string value = string.Empty;
@@ -158,10 +158,10 @@ namespace Altman.Common.AltData
         }
 
         /// <summary>
-        /// 将指定的Web访问参数和值的列表拼接起来（例如a=aaa&b=ddss&temp=dfaadc等），并转换成字节串
+        /// 将指定的Web访问参数和值的列表拼接起来（例如pass=aaa&amp;funcode=eval(base64_decode($_POST[$funcCode$]));&amp;connstr=@mysql_connect($host,$user,$pwd);等），并转换成字节串
         /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
+        /// <param name="item">需要拼接的参数和值的集合（例如{{"pass","aaa"},{"funcode","eval(base64_decode($_POST[$funcCode$]));"},{"connstr","@mysql_connect($host,$user,$pwd);"}}）</param>
+        /// <returns>返回编码拼接后的字节串</returns>
         public byte[] Combine(NameValueCollection item)
         {
             string value = string.Empty;
