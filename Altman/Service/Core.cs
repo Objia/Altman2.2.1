@@ -24,7 +24,7 @@ namespace Altman.Service
         /// </summary>
         /// <param name="data">shellstruct数据</param>
         /// <param name="funcNameXpath">xpath表示的方法名（/cmder/readfile）</param>
-        /// <param name="param"></param>
+        /// <param name="param">数据库连接参数组</param>
         public byte[] SubmitCommand(Shell data, string funcNameXpath, string[] param)
         {
             CustomShellType shellType = CustomShellTypeProvider.GetShellType(data.ShellType);

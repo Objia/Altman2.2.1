@@ -7,10 +7,13 @@ using Altman.Setting;
 
 namespace Altman.Logic
 {
+    /// <summary>
+    /// 用于拼接脚本命令的类
+    /// </summary>
     internal class CustomCommandCode
     {
-        private CustomShellType _customShellType;
-        private string _pass;
+        private CustomShellType _customShellType;//自定义Shell类型
+        private string _pass;//一句话木马的密码
         private string _coding;
 
         private Dictionary<string, string> _randomParam;
@@ -82,9 +85,10 @@ namespace Altman.Logic
 
         /// <summary>
         /// 填充参数，主要用于MainCodeSetting.item和FuncCodeSetting.func.item中的$par$=>par
+        /// <funcParam></funcParam>节点指定后序的<item></item>节点内容中哪些是参数变量
         /// </summary>
-        /// <param name="item"></param>
-        /// <param name="pars"></param>
+        /// <param name="item">item节点内容字符串</param>
+        /// <param name="pars">funcparam节点</param>
         /// <returns></returns>
         private string FillParams(string item, object pars)
         {
@@ -126,6 +130,14 @@ namespace Altman.Logic
         }
 
 
+        /// <summary>
+        /// 将指定的操作拼接包装成完整的脚本语言，并存储于字典中
+        /// </summary>
+        /// <param name="customShellType">自定义的Shell类型</param>
+        /// <param name="pass">一句话木马的密码</param>
+        /// <param name="funcCode">funcCode代码类型，分为非数据库操作(存储于BuiltIn.func文件内)、数据库操作(存储于Db.func文件内)</param>
+        /// <param name="parmas">数据库连接参数组</param>
+        /// <returns></returns>
         private Dictionary<string, string> GetCode(CustomShellType customShellType,
                                                    string pass,
                                                    CustomShellType.FuncCode funcCode,
@@ -154,7 +166,8 @@ namespace Altman.Logic
             {
                 funcCodeString = funcCode.Item;
             }
-            //判断是否随机参数
+            //判断是否进行了参数随机化，如果进行了参数随机化，则将funcParamName的随机参数从随机参数列表中取出来代替默认的funcParamName
+            //备注：_ramdomParma是程序集中记录随机参数的列表，以<默认参数名,随机参数名>的形式记录哪些默认参数使用的参数随机化
             string funcParamName = customShellType.MainCodeSetting.FuncCodeParam.Name;
             if (GlobalSetting.IsParamRandom)
             {
@@ -196,6 +209,12 @@ namespace Altman.Logic
         }
 
 
+        /// <summary>
+        /// 将指定的操作拼接包装成完整的脚本语言，并存储于字典中
+        /// </summary>
+        /// <param name="funcCodeNameXpath">操作命令所在的节点路径</param>
+        /// <param name="parmas">数据库连接参数组</param>
+        /// <returns></returns>
         public Dictionary<string, string> GetCode(string funcCodeNameXpath, string[] parmas)
         {
             //分解funcCodeNameXpath，将"cmder/exec"分解为cmder和exec
