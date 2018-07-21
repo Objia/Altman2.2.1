@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Altman.Logic
 {
+    /// <summary>
+    /// 该类只有一个方法，就是用于载入指定目录中所有的xml文件列表
+    /// </summary>
     internal class XmlHelper
     {
         /// <summary>

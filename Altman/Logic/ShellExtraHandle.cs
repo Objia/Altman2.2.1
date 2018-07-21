@@ -4,6 +4,9 @@ using System.Xml;
 
 namespace Altman.Logic
 {
+    /// <summary>
+    /// 用于提取shell扩展字符串中信息的类
+    /// </summary>
     internal class ShellExtraHandle
     {
         /// <summary>
@@ -27,9 +30,9 @@ namespace Altman.Logic
             return node;
         }
         /// <summary>
-        /// 根据GetShellExtraXml()函数的内容，实质上就是返回null
+        /// 根据shell扩展字符串中的http头部信息生成xml节点类
         /// </summary>
-        /// <param name="shellExtraString"></param>
+        /// <param name="shellExtraString">shell扩展字符串</param>
         /// <returns></returns>
         public static XmlNode GetHttpHeaderXml(string shellExtraString)
         {
@@ -38,9 +41,9 @@ namespace Altman.Logic
             return root.SelectSingleNode("/httpHeader") ?? null;
         }
         /// <summary>
-        /// 根据GetShellExtraXml()函数的内容，实质上就是返回null
+        /// 根据shell扩展字符串中的数据库连接字符串标准格式信息生成xml节点类
         /// </summary>
-        /// <param name="shellExtraString"></param>
+        /// <param name="shellExtraString">shell扩展字符串</param>
         /// <returns></returns>
         public static XmlNode GetSqlConnectionXml(string shellExtraString)
         {
@@ -50,9 +53,9 @@ namespace Altman.Logic
         }
 
         /// <summary>
-        /// 根据GetShellExtraXml()函数的内容，实质上就是返回null
+        /// 根据shell扩展字符串中的http头部信息，提取http头部各字段内容，并生成字典
         /// </summary>
-        /// <param name="shellExtraString"></param>
+        /// <param name="shellExtraString">shell扩展字符串</param>
         /// <returns></returns>
         public static Dictionary<string, string> GetHttpHeaderList(string shellExtraString)
         {

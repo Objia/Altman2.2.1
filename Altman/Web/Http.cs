@@ -12,12 +12,15 @@ namespace Altman.Web
 {
     internal class Http
     {
+        /// <summary>
+        /// 进度条
+        /// </summary>
         public class ProgressBar
         {
-            internal long BytesSent;
-            internal long TotalBytesToSend = -1L;
-            internal long BytesReceived;
-            internal long TotalBytesToReceive = -1L;
+            internal long BytesSent;//已发送的字节数
+            internal long TotalBytesToSend = -1L;//总共需要发送的字节数
+            internal long BytesReceived;//已接收的字节数
+            internal long TotalBytesToReceive = -1L;//总共需要接收的字节数
             internal bool HasUploadPhase;
             internal void Reset()
             {
@@ -31,17 +34,17 @@ namespace Altman.Web
 
         private string _method = null;
         private WebHeaderCollection _headers = null;
-        private long _requestContentLength;
-        private long _responseContentLength;
+        private long _requestContentLength;//请求内容的长度
+        private long _responseContentLength;//响应内容的长度
 
-        private bool _allowAutoRedirect = true;
+        private bool _allowAutoRedirect = true;//是否允许重定向
         private ICredentials _credentials;
-        private bool _proxySet;
+        private bool _proxySet;//是否设置代理
         private IWebProxy _proxy;
         private CookieContainer _cookieContainer = null;
 
         private string _characterSet = null; //响应的字符集
-        private HttpStatusCode _statusCode;
+        private HttpStatusCode _statusCode;//http状态码
 
         private HttpWebRequest _httpWebRequest;
         private HttpWebResponse _httpWebResponse;
@@ -87,6 +90,11 @@ namespace Altman.Web
             _headers = new WebHeaderCollection();
         }
 
+        /// <summary>
+        /// 生成一个HttpWebRequest实例，并填充相应字段属性
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
         private HttpWebRequest GetHttpWebRequest(Uri address)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(address);
@@ -117,6 +125,11 @@ namespace Altman.Web
             request.AllowAutoRedirect = _allowAutoRedirect;
             return request;
         }
+        /// <summary>
+        /// 接收从Internet返回的信息，并封装成一个HttpWebResponse实例
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         private HttpWebResponse GetHttpWebResponse(HttpWebRequest request)
         {
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();

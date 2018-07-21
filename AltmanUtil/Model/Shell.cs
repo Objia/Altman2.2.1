@@ -13,7 +13,7 @@
         public string ShellUrl { get; set; }//一句话木马的地址
         public string ShellPwd { get; set; }//一句话木马的密码
         public string ShellType { get; set; }//一句话木马的类型
-        public string ShellExtraString { get; set; }//一句话木马的扩展字符串，即数据库连接字符串格式
+        public string ShellExtraString { get; set; }//一句话木马的扩展字符串，包括指定http头部字段和数据库连接字符串格式
 
         public string ServerCoding { get; set; }
         public string WebCoding { get; set; }
