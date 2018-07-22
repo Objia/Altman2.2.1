@@ -137,6 +137,13 @@ namespace Altman.Web
         }
         private void CopyHeadersTo(HttpWebRequest request)
         {
+            // 在c#中使用httpwebrequest,webrequest类的时候，如果尝试对http请求的header进行设置，不管是使用set方法还是add方法，如我们设置header中的referer属性：
+            // request.Headers.Set("Referer", "itjsxx.com");
+            // request.Headers.Add("Referer", "itjsxx.com");
+            // 都会报错："必须使用适当的属性或方法修改此标头"。
+            // 原因：c#不允许您使用set和add方法来设置此类标头
+            // c#已经提供了此类标头的专用属性，供您修改和设置此标头时使用。
+            // 也就是说httpwebrequest.header属性不允许手动设置和修改
             if (_headers != null)
             {
                 string text = _headers["Accept"];
@@ -146,14 +153,14 @@ namespace Altman.Web
                 string text5 = _headers["Referer"];
                 string text6 = _headers["User-Agent"];
                 string text7 = _headers["Host"];
-                _headers.Remove("Accept");
-                _headers.Remove("Connection");
-                _headers.Remove("Content-Type");
-                _headers.Remove("Expect");
-                _headers.Remove("Referer");
-                _headers.Remove("User-Agent");
-                _headers.Remove("Host");
-                request.Headers = _headers;
+                //_headers.Remove("Accept");
+                //_headers.Remove("Connection");
+                //_headers.Remove("Content-Type");
+                //_headers.Remove("Expect");
+                //_headers.Remove("Referer");
+                //_headers.Remove("User-Agent");
+                //_headers.Remove("Host");
+                //request.Headers = _headers;
                 if (text != null && text.Length > 0)
                 {
                     request.Accept = text;
@@ -193,7 +200,7 @@ namespace Altman.Web
         public byte[] Post(string requestUriString, byte[] requestData)
         {
             Uri uri = new Uri(requestUriString);
-            _headers.Add(HttpRequestHeader.ContentType, "application/x-www-form-urlencoded");
+            _headers.Add(HttpRequestHeader.ContentType, "application/x-www-form-urlencoded");//表示要上传表单数据
             return UploadData(uri, "POST", requestData);
         }
         private byte[] UploadData(Uri requestUriString, string requestMethod, byte[] requestData)
@@ -248,6 +255,12 @@ namespace Altman.Web
             }
             return result;
         }
+
+        /// <summary>
+        /// 发送http数据
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="data"></param>
         private void UploadBits(HttpWebRequest request, byte[] data)
         {
             if (data == null) return;
@@ -258,6 +271,11 @@ namespace Altman.Web
                 WriteBytesToStream(stream, data);
             }
         }
+        /// <summary>
+        /// 接收http数据
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         private byte[] DownloadBits(HttpWebRequest request)
         {
             HttpWebResponse response = _httpWebResponse = GetHttpWebResponse(request);
@@ -269,9 +287,14 @@ namespace Altman.Web
             }
             return arraryByte;
         }
+        /// <summary>
+        /// 向指定流中写入字节序列，并计算进度
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="data"></param>
         private void WriteBytesToStream(Stream stream, byte[] data)
         {
-            const int chunkSize = 1024;
+            const int chunkSize = 1024;//数据分片的大小
             int position = 0;
             long dataLength = data.LongLength;
 
