@@ -10,10 +10,13 @@ using Altman.Common.AltEventArgs;
 
 namespace Altman.Web
 {
+    /// <summary>
+    /// 包含http数据发送和接收操作的类
+    /// </summary>
     internal class Http
     {
         /// <summary>
-        /// 进度条
+        /// 进度条类
         /// </summary>
         public class ProgressBar
         {
@@ -21,7 +24,7 @@ namespace Altman.Web
             internal long TotalBytesToSend = -1L;//总共需要发送的字节数
             internal long BytesReceived;//已接收的字节数
             internal long TotalBytesToReceive = -1L;//总共需要接收的字节数
-            internal bool HasUploadPhase;
+            internal bool HasUploadPhase;//标记是上传还是下载进度
             internal void Reset()
             {
                 this.BytesSent = 0L;
@@ -192,11 +195,22 @@ namespace Altman.Web
             }
         }
 
+        /// <summary>
+        /// 使用Get方法向一句话木马发送http数据
+        /// </summary>
+        /// <param name="requestUriString"></param>
+        /// <returns></returns>
         public byte[] Get(string requestUriString)
         {
             Uri uri = new Uri(requestUriString);
             return UploadData(uri, "GET", null);
         }
+        /// <summary>
+        /// 使用Post方法向一句话木马发送http数据
+        /// </summary>
+        /// <param name="requestUriString"></param>
+        /// <param name="requestData">需要Post的数据</param>
+        /// <returns></returns>
         public byte[] Post(string requestUriString, byte[] requestData)
         {
             Uri uri = new Uri(requestUriString);
@@ -311,9 +325,14 @@ namespace Altman.Web
                 ProgressChanged(progress);
             }
         }
+        /// <summary>
+        /// 从指定流中读出字节序列并返回
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
         private byte[] ReadBytesFromStream(Stream stream)
         {
-            const int bufferLen = 4096;
+            const int bufferLen = 4096;//数据分片大小
             byte[] buffer = new byte[bufferLen];
 
             ProgressBar progress = new ProgressBar();
@@ -332,6 +351,10 @@ namespace Altman.Web
                 return memoryStream.ToArray();
             }
         }
+        /// <summary>
+        /// 上传和下载数据触发事件，主要用于显示进度条
+        /// </summary>
+        /// <param name="progress"></param>
         private void ProgressChanged(ProgressBar progress)
         {
             if (progress.HasUploadPhase)

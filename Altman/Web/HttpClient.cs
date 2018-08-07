@@ -9,6 +9,9 @@ using Altman.Setting;
 
 namespace Altman.Web
 {
+    /// <summary>
+    /// 数据发送和接收前的预操作（对header的操作，如设置代理、设置cookie等）
+    /// </summary>
     internal class HttpClient
     {
         private WebHeaderCollection _header;
@@ -22,7 +25,7 @@ namespace Altman.Web
         private Http GetHttp()
         {
             Http http = new Http();
-            //配置proxy
+            //配置proxy，静态字段
             WebRequest.DefaultWebProxy = GlobalSetting.Proxy;
             //配置cookie
             if (GlobalSetting.HttpCookie != null)
@@ -41,14 +44,14 @@ namespace Altman.Web
                     }
                 }
                 //由于传递过去的Headers的值可能发生变化，所以这里需要完全拷贝一份。
-                WebHeaderCollection tmpHeader = new WebHeaderCollection { _header };
+                WebHeaderCollection tmpHeader = new WebHeaderCollection { _header };//此处使用的是集合初始化器，实际调用的是集合的add方法进行拷贝
                 http.Headers = tmpHeader;
             }
             else
             {
                 if (GlobalSetting.HttpHeader != null)
                 {                  
-                    WebHeaderCollection tmpHeader = new WebHeaderCollection { GlobalSetting.HttpHeader };
+                    WebHeaderCollection tmpHeader = new WebHeaderCollection { GlobalSetting.HttpHeader };//此处使用的是集合初始化器，实际调用的是集合的add方法进行拷贝
                     http.Headers = tmpHeader;
                 }
             }
@@ -64,6 +67,12 @@ namespace Altman.Web
 
 
         #region 提交命令
+        /// <summary>
+        /// 从存储自定义Shell操作的字典中提交命令代码（将字典中header和cookie的数据写入http类，将字典中body的数据提取并返回）
+        /// </summary>
+        /// <param name="http">存储header和cookie数据的http类</param>
+        /// <param name="commandCode">存储自定义Shell操作代码的字典</param>
+        /// <returns>字典中的body数据，即post或get的代码</returns>
         private string ProcessCommandCode(ref Http http, Dictionary<string, string> commandCode)
         {
             string postCode = "";
@@ -110,6 +119,14 @@ namespace Altman.Web
             }
             return postCode;
         }
+        /// <summary>
+        /// 
+        /// </summary使用post提交命令
+        /// <param name="url">一句话木马</param>
+        /// <param name="commandCode">存储自定义Shell操作的字典</param>
+        /// <param name="isBindUploadProgressChangedEvent">是否绑定了上传进度更改事件（是否显示上传进度条）</param>
+        /// <param name="isBindDownloadProgressChangedEvent">是否绑定了下载进度更改事件（是否显示下载进度条）</param>
+        /// <returns></returns>
         public byte[] SubmitCommandByPost(string url,
                                           Dictionary<string, string> commandCode,
                                           bool isBindUploadProgressChangedEvent = false,

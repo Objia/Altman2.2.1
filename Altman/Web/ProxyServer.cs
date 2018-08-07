@@ -13,13 +13,23 @@ using Altman.Common.AltEventArgs;
 
 namespace Altman.Web
 {
+    /// <summary>
+    /// 代理服务器类（为了保证整个程序集只能有一个该类的对象实例，使用单例模式）
+    /// 单例模式须保证以下三点：
+    /// 一是单例模式的类只提供私有的构造函数（private ProxyServer()）
+    /// 二是类定义中含有一个该类的静态私有对象（private static readonly ProxyServer _server = new ProxyServer();）
+    /// 三是该类提供了一个静态的公有的函数用于创建或获取它本身的静态私有对象（public static ProxyServer Server { get { return _server; } }）
+    /// </summary>
     internal class ProxyServer
     {
         private int _listeningPort = 8888;
+        /// <summary>
+        /// 监听IP地址字符串
+        /// </summary>
         private string _listeningIPInterface = "127.0.0.1";
         private string _certFilePath = "https.pfx";
 
-        private static readonly ProxyServer _server = new ProxyServer();
+        private static readonly ProxyServer _server = new ProxyServer();//静态类，表示整个程序集只能有一个此类的对象实例
 
         private static readonly int BUFFER_SIZE = 8192;
         private static readonly char[] semicolonSplit = new char[] { ';' };
@@ -50,7 +60,9 @@ namespace Altman.Web
                 return _listeningPort;
             }
         }
-
+        /// <summary>
+        /// 私有构造函数
+        /// </summary>
         private ProxyServer()
         {
             _listener = new TcpListener(ListeningIp, ListeningPort);
@@ -103,7 +115,7 @@ namespace Altman.Web
 
             //等待完成当前连接
             _listenerThread.Abort();
-            _listenerThread.Join();
+            _listenerThread.Join();//join函数的作用是：阻止线程并发执行，变成单线程，即必须等待线程_listenerThread结束后，都会执行本程序中join以后的语句。
             _listenerThread.Join();
         }
 

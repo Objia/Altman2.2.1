@@ -2,6 +2,9 @@
 
 namespace Altman.Common.AltEventArgs
 {
+    /// <summary>
+    /// 上传数据触发事件的参数
+    /// </summary>
     public class AltUploadProgressChangedEventArgs : EventArgs
     {
         private long bytesSent;
